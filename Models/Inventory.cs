@@ -6,12 +6,8 @@ namespace InventoryAPIs.Models
     public class Inventory : BaseEntities
     {
         public string? InventoryName { get; set; }
-        [Required]
-        [ForeignKey("CategoryId")]
-        public int CategoryId { get; set; }
-
+        public Category Category { get; set; }
         public int Quantity { get; set; }
-
         public DateTime DateofPurchase { get; set; }
     }
 }

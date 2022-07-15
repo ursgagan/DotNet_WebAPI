@@ -6,7 +6,7 @@ namespace InventoryAPIs.Data
 {
     public class InventoryDbContext : DbContext
     {
-        private static readonly string ICS = $"Server=DESKTOP-4UQI8GH;Database=InventoryDb;IntegratedSecurity=True;Trusted_Connection=True;";
+        private static readonly string ICS = $"Server=DESKTOP-4UQI8GH;Database=InventoryDb;Integrated Security=True;Trusted_Connection=True;";
         public InventoryDbContext() : base(ICS)
         {
             Database.SetInitializer(new CreateDatabaseIfNotExists<InventoryDbContext>());

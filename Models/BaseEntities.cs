@@ -9,7 +9,7 @@ namespace InventoryAPIs.Models
 
         public DateTime CreateDateTime { get; set; }
 
-        public DateTime? ModiefiedDateTime { get; set; }
+        public DateTime? ModifiedDateTime { get; set; }
 
         public bool IsActive { get; set; }
     }
