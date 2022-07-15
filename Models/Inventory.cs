@@ -3,16 +3,15 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace InventoryAPIs.Models
 {
-    public class Inventory
+    public class Inventory : BaseEntities
     {
-        [Key] public int id { get; set; }
+        public string? InventoryName { get; set; }
+        [Required]
+        [ForeignKey("CategoryId")]
+        public int CategoryId { get; set; }
 
-        [ForeignKey("Name")]
-        public string? Name { get; set; }
-      
         public int Quantity { get; set; }
 
-        public DateTime DateofPurchase {get; set; }
+        public DateTime DateofPurchase { get; set; }
     }
-
 }

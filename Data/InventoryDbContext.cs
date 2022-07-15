@@ -6,20 +6,17 @@ namespace InventoryAPIs.Data
 {
     public class InventoryDbContext : DbContext
     {
-       // private static readonly string ICS = $"Server=DESKTOP-4UQI8GH;Database=InventoryDb;IntegratedSecurity=True;Trusted_Connection=True;";
-        public InventoryDbContext() : base()
+        private static readonly string ICS = $"Server=DESKTOP-4UQI8GH;Database=InventoryDb;IntegratedSecurity=True;Trusted_Connection=True;";
+        public InventoryDbContext() : base(ICS)
         {
-            Database.SetInitializer<InventoryDbContext>(new CreateDatabaseIfNotExists<InventoryDbContext>());
+            Database.SetInitializer(new CreateDatabaseIfNotExists<InventoryDbContext>());
         }
        
-        public DbSet<Inventory> Inventory { get; set; }
-        public DbSet<Category> Category { get; set; }
+        public DbSet<Inventory> Inventories { get; set; }
+        public DbSet<Category> Categories { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
         }
-
     }
-   
-
 }
